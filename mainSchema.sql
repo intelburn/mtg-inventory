@@ -28,7 +28,7 @@ CREATE TABLE Magic.keywords (
 );
 CREATE TABLE Magic.keywordBindings (
   Card int REFERENCES Magic.cards (CardID),
-  Keyword int REFERENCES Magic.keywords (KeywordID).
+  Keyword int REFERENCES Magic.keywords (KeywordID),
   PRIMARY KEY (Card, Keyword)
 );
 CREATE TABLE Magic.themes (
