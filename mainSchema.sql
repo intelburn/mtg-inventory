@@ -19,7 +19,8 @@ CREATE TABLE Magic.cards (
   Quantity int NOT NULL,
   Color int REFERENCES Magic.colors (ColorID),
   CardText text,
-  Clan int REFERENCES Magic.clans (ClanID)
+  Clan int REFERENCES Magic.clans (ClanID),
+  CMC int NOT NULL
 );
 CREATE TABLE Magic.keywords (
   KeywordID SERIAL PRIMARY KEY,
