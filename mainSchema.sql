@@ -28,7 +28,8 @@ CREATE TABLE Magic.keywords (
 );
 CREATE TABLE Magic.keywordBindings (
   Card int REFERENCES Magic.cards (CardID),
-  Keyword int REFERENCES Magic.keywords (KeywordID)
+  Keyword int REFERENCES Magic.keywords (KeywordID).
+  PRIMARY KEY (Card, Keyword)
 );
 CREATE TABLE Magic.themes (
   ThemeID SERIAL PRIMARY KEY,
@@ -36,7 +37,8 @@ CREATE TABLE Magic.themes (
 );
 CREATE TABLE Magic.themeBindings (
   Card int REFERENCES Magic.cards (CardID),
-  Theme int REFERENCES Magic.themes (ThemeID)
+  Theme int REFERENCES Magic.themes (ThemeID),
+  PRIMARY KEY (Card, Theme)
 );
 CREATE TABLE Magic.types (
   TypeID SERIAL PRIMARY KEY,
@@ -44,7 +46,8 @@ CREATE TABLE Magic.types (
 );
 CREATE TABLE Magic.typeBindings (
   Card int REFERENCES Magic.cards (CardID),
-  Type int REFERENCES Magic.types (TypeID)
+  Type int REFERENCES Magic.types (TypeID),
+  PRIMARY KEY (Card, Type)
 );
 CREATE TABLE Magic.roles (
   RoleID SERIAL PRIMARY KEY,
@@ -52,5 +55,6 @@ CREATE TABLE Magic.roles (
 );
 CREATE TABLE Magic.roleBindings (
   Card int REFERENCES Magic.cards (CardID),
-  Role int REFERENCES Magic.roles (RoleID)
+  Role int REFERENCES Magic.roles (RoleID),
+  PRIMARY KEY (Card, Role)
 );
